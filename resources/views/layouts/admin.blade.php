@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="fixed sidebar-left-collapsed">
+<html lang="es" class="fixed sidebar-left-collapsed">
 	<head>
 
 		<!-- Basic -->
