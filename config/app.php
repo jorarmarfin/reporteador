@@ -161,18 +161,19 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
-        Elibyy\TCPDF\ServiceProvider::class,
-        /*
-         * Application Service Providers...
-         */
+        * Application Service Providers...
+        */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        /*
+         * Package Service Providers...
+         */
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Elibyy\TCPDF\ServiceProvider::class,
+        Styde\Html\HtmlServiceProvider::class,
 
     ],
 
