@@ -28,7 +28,7 @@ class HomeController extends Controller
     
     public function cargar()
     {
-        
+        dd('cargar');
     }
     public function configurar()
     {

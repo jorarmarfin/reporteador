@@ -12,7 +12,7 @@
         </a>                        
     </li>
     <li class="nav-active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('cargar') }}">
             <i class="fas fa-upload" aria-hidden="true"></i>
             <span>Cargar</span>
         </a>                        
