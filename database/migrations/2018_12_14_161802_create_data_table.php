@@ -15,15 +15,15 @@ class CreateDataTable extends Migration
     {
         Schema::create('data', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('c_01')->nullable();
-            $table->string('c_02')->nullable();
-            $table->string('c_03')->nullable();
-            $table->string('c_04')->nullable();
-            $table->string('c_05')->nullable();
-            $table->string('c_06')->nullable();
-            $table->string('c_07')->nullable();
-            $table->string('c_08')->nullable();
-            $table->string('c_09')->nullable();
+            $table->string('c_1')->nullable();
+            $table->string('c_2')->nullable();
+            $table->string('c_3')->nullable();
+            $table->string('c_4')->nullable();
+            $table->string('c_5')->nullable();
+            $table->string('c_6')->nullable();
+            $table->string('c_7')->nullable();
+            $table->string('c_8')->nullable();
+            $table->string('c_9')->nullable();
             $table->string('c_10')->nullable();
             $table->string('c_11')->nullable();
             $table->string('c_12')->nullable();

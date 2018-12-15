@@ -16,6 +16,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('inicio');
 Route::get('/home', 'HomeController@index')->name('inicio');
 Route::post('cargar', 'HomeController@cargar')->name('cargar');
+Route::get('reset', 'HomeController@reset')->name('reset');
 
 Auth::routes();
 

@@ -16,10 +16,11 @@
                 <div class="col-md-6">
                     {!! Form::file('file', ['class'=>'form-control']); !!}
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-3">
                     {!! Form::submit('Cargar',['class'=>'form-control btn btn-primary']) !!}
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-3">
+                    <a href="{{ route('reset') }}" class="form-control btn btn-danger">Reset</a>
                 </div>
             </div>
         </div>
@@ -38,10 +39,11 @@
                     <h2 class="card-title">Datos</h2>
                 </header>
                 <div class="card-body">
+                    @if ($myconfig)
                     <table class="table table-bordered table-stripped table-hover table-responsive-lg table-sm mb-0">
                         <thead>
                             <tr class="success">
-                                @for ($i = 0; $i < 30; $i++)                                    
+                                @for ($i = 0; $i < $myconfig->columnas; $i++)                                    
                                     <th>C {{ $i+1 }}</th>
                                 @endfor
                             </tr>
@@ -49,12 +51,16 @@
                         <tbody>
                             @foreach ($mydata as $item)
                                 <tr>
-                                    <td>{{ $item->c_01 }}</td>
+                                    @for ($i = 0; $i < $myconfig->columnas; $i++)
+                                        <td>{{ $item['c_'.($i+1)] }}</td>
+                                    @endfor
                                 </tr>
-                                
                             @endforeach
                         </tbody>
                     </table>
+                    <p></p>
+                    {{ $mydata->links() }}
+                    @endif
                 </div>
             </section>
         </div>

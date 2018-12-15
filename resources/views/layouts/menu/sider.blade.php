@@ -12,12 +12,6 @@
         </a>                        
     </li>
     <li class="nav-active">
-        <a class="nav-link" href="{{ route('cargar') }}">
-            <i class="fas fa-upload" aria-hidden="true"></i>
-            <span>Cargar</span>
-        </a>                        
-    </li>
-    <li class="nav-active">
         <a class="nav-link" href="#">
             <i class="fas fa-file-pdf" aria-hidden="true"></i>
             <span>Reporte</span>
