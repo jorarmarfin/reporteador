@@ -8,6 +8,7 @@ use App\Models\Data;
 use Illuminate\Http\Request;
 use App\models\Configuracion;
 use DB;
+use PDF;
 class HomeController extends Controller
 {
     /**
@@ -28,14 +29,6 @@ class HomeController extends Controller
     public function index()
     {        
         $myconfig = Configuracion::first();
-        // if($myconfig){
-        //     $campos = '';
-        //     for ($i=0; $i < $myconfig->columnas; $i++) { 
-        //         $j=$i+1;
-        //         $campos .= "c_$j";
-        //         if($i<$myconfig->columnas-1)$campos .= ',';
-        //     }
-        // }
         $mydata = Data::whereNotNull('id')->paginate(10);  
 
         return view('admin.index',compact('mydata','myconfig'));
@@ -74,6 +67,21 @@ class HomeController extends Controller
     }
     public function reporte()
     {
-        
+        return view('admin.reporte');
+    }
+    public function pdf()
+    {
+        $mydata = Data::all();
+
+        foreach ($mydata as $key => $item) {
+
+            PDF::SetTitle('FICHA DE INSCRIPCION');
+            PDF::AddPage('U','A4');
+            #TITULO
+            PDF::SetXY(5,5);
+            PDF::SetFont('helvetica','B',19);
+            PDF::Cell(60,0,$item->c_2,1,0,'C');
+        }
+        PDF::Output(storage_path('app/pdf/').'Reporte_'.$item->c_1.'.pdf','FI');
     }
 }

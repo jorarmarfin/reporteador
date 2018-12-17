@@ -1,6 +1,6 @@
 <ul class="nav nav-main">
     <li class="nav-active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('inicio') }}">
             <i class="fas fa-home" aria-hidden="true"></i>
             <span>Escritorio</span>
         </a>                        
@@ -12,7 +12,7 @@
         </a>                        
     </li>
     <li class="nav-active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('reporte') }}">
             <i class="fas fa-file-pdf" aria-hidden="true"></i>
             <span>Reporte</span>
         </a>                        

@@ -39,6 +39,9 @@
 
 		<!-- Head Libs -->
 		<script src="{{ asset('vendor/modernizr/modernizr.js') }}"></script>
+		<!-- Progress Bars -->
+		<script src="{{ asset('vendor/pace/pace.min.js') }}"></script>
+		<script src="{{ asset('vendor/pace/pace-theme-center-atom.css') }}"></script>
 
 	</head>
 	<body>
@@ -169,5 +172,8 @@
 
 		<!-- Examples -->
 		<script src="{{ asset('js/examples/examples.landing.dashboard.js') }}"></script>
+		<script>
+			
+		</script>
 	</body>
 </html>
