@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use File;
-use Storage;
-use App\Models\Data;
-use Illuminate\Http\Request;
-use App\models\Configuracion;
 use DB;
 use PDF;
+use File;
+use Mail;
+use Storage;
+use App\Models\Data;
+use App\Mail\ProcesarEmail;
+use Illuminate\Http\Request;
+use App\models\Configuracion;
+
 class HomeController extends Controller
 {
     /**
@@ -72,16 +75,30 @@ class HomeController extends Controller
     public function pdf()
     {
         $mydata = Data::all();
-
-        foreach ($mydata as $key => $item) {
-
-            PDF::SetTitle('FICHA DE INSCRIPCION');
-            PDF::AddPage('U','A4');
-            #TITULO
-            PDF::SetXY(5,5);
-            PDF::SetFont('helvetica','B',19);
-            PDF::Cell(60,0,$item->c_2,1,0,'C');
+        if (!$mydata->isempty()) {
+            foreach ($mydata as $key => $item) {
+                
+                PDF::SetTitle('FICHA DE INSCRIPCION');
+                PDF::AddPage('U','A4');
+                #TITULO
+                PDF::SetXY(5,5);
+                PDF::SetFont('helvetica','B',19);
+                PDF::Cell(60,0,$item->c_2,1,0,'C');
+            }
+            PDF::Output(storage_path('app/pdf/').'Reporte_'.$item->c_1.'.pdf','FI');
         }
-        PDF::Output(storage_path('app/pdf/').'Reporte_'.$item->c_1.'.pdf','FI');
     }
+    public function email()
+    {
+        $tipo = [0=>'Plantilla',1 => 'Texto Plano'];
+        return view('admin.email',compact('tipo'));
+    }
+    public function send(Request $request)
+    {
+        $data = $request->all();
+        Mail::to('luis.mayta@gmail.com','Informacion')
+                ->send(new ProcesarEmail($data));
+        return back();
+    }
+
 }

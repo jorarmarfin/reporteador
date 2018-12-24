@@ -6,15 +6,15 @@
         </a>                        
     </li>
     <li class="nav-active">
-        <a class="nav-link" href="#">
-            <i class="fas fa-cogs" aria-hidden="true"></i>
-            <span>Configurar</span>
-        </a>                        
-    </li>
-    <li class="nav-active">
         <a class="nav-link" href="{{ route('reporte') }}">
-            <i class="fas fa-file-pdf" aria-hidden="true"></i>
-            <span>Reporte</span>
+                <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                <span>Reporte</span>
+            </a>                        
+        </li>
+    <li class="nav-active">
+        <a class="nav-link" href="{{ route('email') }}">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>Email</span>
         </a>                        
     </li>
 

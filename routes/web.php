@@ -19,6 +19,8 @@ Route::post('cargar', 'HomeController@cargar')->name('cargar');
 Route::get('reset', 'HomeController@reset')->name('reset');
 Route::get('reporte', 'HomeController@reporte')->name('reporte');
 Route::get('pdf', 'HomeController@pdf')->name('pdf');
+Route::get('email', 'HomeController@email')->name('email');
+Route::post('send', 'HomeController@send')->name('send');
 
 
 Auth::routes();
