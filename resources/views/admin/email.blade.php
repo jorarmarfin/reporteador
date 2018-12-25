@@ -18,6 +18,9 @@
                 {!! Field::number('campo',null,['placeholder'=>'Campo email','label'=>'Ingrese el numero de campo donde se encuentra el email']) !!}
             </div>
             <div class="col-md-12">
+                {!! Field::text('remitente',null,['placeholder'=>'Remitente','label'=>'De:','aria-required'=>'true', 'class'=>'form-control']) !!}
+            </div>
+            <div class="col-md-12">
                 {!! Field::text('asunto',null,['placeholder'=>'asunto','aria-required'=>'true', 'class'=>'form-control']) !!}
             </div>
             <div class="col-md-12">

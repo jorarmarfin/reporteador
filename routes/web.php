@@ -21,6 +21,7 @@ Route::get('reporte', 'HomeController@reporte')->name('reporte');
 Route::get('pdf', 'HomeController@pdf')->name('pdf');
 Route::get('email', 'HomeController@email')->name('email');
 Route::post('send', 'HomeController@send')->name('send');
+Route::get('plantilla', 'HomeController@plantilla')->name('plantilla');
 
 
 Auth::routes();

@@ -96,9 +96,19 @@ class HomeController extends Controller
     public function send(Request $request)
     {
         $data = $request->all();
-        Mail::to('luis.mayta@gmail.com','Informacion')
-                ->send(new ProcesarEmail($data));
+        $datos = Data::all();
+        $campo = 'c_'.$data['campo'];
+        foreach ($datos as $key => $item) {
+            Mail::to('luis.mayta@gmail.com')
+            ->send(new ProcesarEmail($data,$item));
+        }
+
         return back();
+    }
+    public function plantilla()
+    {
+        $item = Data::first();
+        return view('emails.plantilla',compact('item'));
     }
 
 }

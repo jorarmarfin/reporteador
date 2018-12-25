@@ -11,15 +11,17 @@ class ProcesarEmail extends Mailable
 {
     use Queueable, SerializesModels;
     public $data;
+    public $item;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct($data,$item)
     {
         $this->data = $data;
+        $this->item = $item;
     }
 
     /**
@@ -31,11 +33,11 @@ class ProcesarEmail extends Mailable
     {
         $data = $this->data;
         if ($data['tipo']==1) {
-            return $this->from('luis.mayta@drinux.com')
+            return $this->from($data['remitente'])
                         ->subject($data['asunto'])
                         ->text('emails.simple-text');
         }else{
-            return $this->from('luis.mayta@drinux.com')
+            return $this->from($data['remitente'])
                         ->subject($data['asunto'])
                         ->view('emails.plantilla');
 

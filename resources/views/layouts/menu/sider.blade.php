@@ -17,5 +17,11 @@
             <span>Email</span>
         </a>                        
     </li>
+    <li class="nav-active">
+        <a class="nav-link" href="{{ route('plantilla') }}">
+            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+            <span>plantilla</span>
+        </a>                        
+    </li>
 
 </ul>
